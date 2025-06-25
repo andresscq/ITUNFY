@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iTunfy - Tu música favorita</title>
+    <link rel="stylesheet" href="{% static 'usuarios/styles.css' %}" />
+</head>
+<body>
+    <div class="music-visual">
+        <div class="wave"></div>
+    </div>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">iTunfy</div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="{% url 'index' %}" class="active">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'form' %}">Solicitar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'list' %}">Lista</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <div class="hero">
+                <h1>iTunfy</h1>
+                <p>Solicita tu música favorita y disfrútala al instante</p>
+                <a href="{% url 'form' %}" class="btn">Solicitar Canción</a>
+                <a href="{% url 'list' %}" class="btn btn-secondary">Ver Solicitudes</a>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">🎶</div>
+                    <h3>Solicita Fácil</h3>
+                    <p>Completa un formulario simple y solicita tu canción favorita en segundos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Escucha Online</h3>
+                    <p>Disfruta de tu música directamente desde tu navegador, sin descargas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Multiplataforma</h3>
+                    <p>Accede desde cualquier dispositivo: móvil, tablet o computadora.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'usuarios/app.js' %}"></script>
+</body>
+</html>

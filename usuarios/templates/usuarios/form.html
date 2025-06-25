@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solicitar Canción - iTunfy</title>
+    <link rel="stylesheet" href="{% static 'usuarios/styles.css' %}" />
+</head>
+<body>
+    <div class="music-visual">
+        <div class="wave"></div>
+    </div>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">iTunfy</div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'form' %}" class="active">Solicitar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'list' %}">Lista</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <div class="hero">
+                <h1>Solicitar Canción</h1>
+                <p>Completa el formulario para solicitar tu música favorita</p>
+            </div>
+            <div class="form-container">
+                <form id="song-request-form">
+                    <div class="form-group">
+                        <label for="song-title">Título de la Canción</label>
+                        <input type="text" id="song-title" name="songTitle" required placeholder="Escribe el título..." />
+                    </div>
+                    <div class="form-group">
+                        <label for="artist">Artista</label>
+                        <input type="text" id="artist" name="artist" required placeholder="Nombre del artista..." />
+                    </div>
+                    <div class="form-group">
+                        <label for="album">Álbum (Opcional)</label>
+                        <input type="text" id="album" name="album" placeholder="Nombre del álbum..." />
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Género</label>
+                        <select id="genre" name="genre" required>
+                            <option value="">Selecciona un género</option>
+                            <option value="pop">Pop</option>
+                            <option value="rock">Rock</option>
+                            <option value="hip-hop">Hip Hop</option>
+                            <option value="electronic">Electrónica</option>
+                            <option value="jazz">Jazz</option>
+                            <option value="classical">Clásica</option>
+                            <option value="reggaeton">Reggaetón</option>
+                            <option value="salsa">Salsa</option>
+                            <option value="bachata">Bachata</option>
+                            <option value="merengue">Merengue</option>
+                            <option value="cumbia">Cumbia</option>
+                            <option value="rap">Rap</option>
+                            <option value="r&b">R&B</option>
+                            <option value="country">Country</option>
+                            <option value="folk">Folk</option>
+                            <option value="blues">Blues</option>
+                            <option value="metal">Metal</option>
+                            <option value="punk">Punk</option>
+                            <option value="indie">Indie</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="requester">Tu Nombre</label>
+                        <input type="text" id="requester" name="requester" required placeholder="¿Cómo te llamas?" />
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje (Opcional)</label>
+                        <textarea id="message" name="message" placeholder="¿Algún mensaje especial para acompañar tu solicitud?"></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn">Enviar Solicitud</button>
+                        <br />
+                        <a href="{% url 'index' %}" class="btn">Volver al Inicio</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'usuarios/app.js' %}"></script>
+</body>
+</html>

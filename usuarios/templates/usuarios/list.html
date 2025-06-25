@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Solicitudes - iTunfy</title>
+    <link rel="stylesheet" href="{% static 'usuarios/styles.css' %}" />
+</head>
+<body>
+    <div class="music-visual">
+        <div class="wave"></div>
+    </div>
+    
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="logo">iTunfy</div>
+                <ul class="nav-links">
+                    <li>
+                        <a href="{% url 'index' %}">Inicio</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'form' %}">Solicitar</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'list' %}" class="active">Lista</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="main-content">
+            <div class="hero">
+                <h1>Solicitudes de Música</h1>
+                <p>Lista de todas las canciones solicitadas</p>
+            </div>
+            <div class="song-list" id="song-list">
+                <!-- Las solicitudes aparecerán aquí -->
+            </div>
+            <div class="action-buttons">
+                <a href="{% url 'form' %}" class="btn">Nueva Solicitud</a>
+                <a href="{% url 'index' %}" class="btn btn-secondary">Volver al Inicio</a>
+                <button id="clear-list" class="btn btn-secondary" style="background: rgba(220, 53, 69, 0.8);">Limpiar Lista</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'usuarios/app.js' %}"></script>
+</body>
+</html>
